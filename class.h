@@ -7,23 +7,17 @@
 
 
 
-class tree {
+class BST {
 
 
 
- private:
-  tree *left, *right;
-  std::string key;
-  int data;
-
- public:
-  tree(std::string key);
-
+public:
+  
   //constructor
-  tree();
+  BST();
 
   //destructor
-  ~tree();
+  ~BST();
 
   void set(std::string& word, int num);
 
@@ -42,6 +36,26 @@ class tree {
   void display(); 
 
  };
+
+
+class tree {
+
+public:
+
+  tree(std::string key); 
+
+private:
+                                                                         
+  tree *left, *right;                                                          
+  std::string key;                                                             
+  int data;    
+
+
+};
+
+
+
+
 
 
 #endif
