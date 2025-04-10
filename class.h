@@ -9,6 +9,9 @@
 
 class BST {
 
+private:
+
+  Node *pointer; 
 
 
 public:
@@ -21,7 +24,9 @@ public:
 
   void set(std::string& word, int num);
 
-  std::string find(std::string& word);
+  void read(std::string& file); 
+
+  int find(std::string& word);
 
   void print();
 
@@ -38,15 +43,15 @@ public:
  };
 
 
-class tree {
+class Node {
 
 public:
 
-  tree(std::string key); 
+  Node(std::string word); 
 
 private:
                                                                          
-  tree *left, *right;                                                          
+  Node *left, *right;                                                          
   std::string key;                                                             
   int data;    
 
