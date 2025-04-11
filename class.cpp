@@ -17,17 +17,10 @@ Node::Node(std::string word, int wordcount){
   key = word; 
 
 }
-//tree::tree();
-
-
-//insert destructor here
-//Node::~Node(std::string word) {
-//}
 
 
 
-
-void Node::display() {
+void BST::display() {
 
   cout << "Welcome to the BST Word Counting program!" << endl;
   cout << "Enter an option: " << endl; 
@@ -59,6 +52,8 @@ int BST::find(std::string& word) {
 
   if(pointer == NULL){
 
+    cout << "This tree is empty. Why don't you put some fruit on it?" << endl;
+    
     return;
   }
   else{
@@ -69,7 +64,7 @@ int BST::find(std::string& word) {
 
 }
 
-int BST::findHelper(Node *pointer, std::string word) {
+int BST::findHelper(Node *pointer, std::string& word) {
 
 
   if(pointer = NULL) {
@@ -209,19 +204,38 @@ void BST::read() {
 
 	  printHelper(pointer); 
 
+       }
 
 
-	  printHelper(Node *pointer) {
+
+	//add comment about getting chatgpt help on knowing how to open up two files
+	
+
+	  void BST::printHelper(Node *pointer) {
 
 
-	    //if not null, printhelper(pointer->left)
-	    /** 
-             cout the current word and wordcount
+	    if(pointer == NULL) {
+              
+	      return;
+	      
+	    } else {
 
-              then printhelper(pointer->right)
+	      if(pointer->left != NULL) {
 
-	     **/
+		printHelper(pointer->left);
+	      }
+		cout << "Word: " << pointer->left->key;
+		cout << " " << "Number of occurrences: " << pointer->left->data;
+		cout << endl;
 
-	    //print helper is ust a way to search until we find null children and then it will return a 
+		if(pointer->right != NULL) {
 
-	}
+		  printHelper(pointer->right);
+
+		}	    
+	    }
+
+       }
+
+
+	  
