@@ -201,7 +201,6 @@ void BST::read() {
 
 	void BST::print() {
 
-
 	  printHelper(pointer); 
 
        }
@@ -213,29 +212,42 @@ void BST::read() {
 
 	  void BST::printHelper(Node *pointer) {
 
-
 	    if(pointer == NULL) {
-              
-	      return;
-	      
-	    } else {
-
-	      if(pointer->left != NULL) {
-
-		printHelper(pointer->left);
-	      }
-		cout << "Word: " << pointer->left->key;
-		cout << " " << "Number of occurrences: " << pointer->left->data;
-		cout << endl;
-
-		if(pointer->right != NULL) {
-
-		  printHelper(pointer->right);
-
-		}	    
+	      return; 
 	    }
+
+	    printHelper(pointer->left);
+	    
+	    printHelper(pointer->right);
+
+
+	    cout << pointer->key;
+	    
+	    cout << pointer->data; 
+
 
        }
 
 
+
 	  
+ string BST::minHelper(Node *pointer) {
+ 
+     
+   if(pointer == NULL) {
+
+     cout << "The tree is empty" << endl;
+     return; 
+   } else {
+
+     if(pointer->left->key < temp->key) {
+
+       temp = pointer->left;
+       minHelper(temp); 
+
+     }
+	 
+
+
+	  
+ }
