@@ -46,7 +46,30 @@ void BST::BST() {
 
   }
 
+void BST::~BST() {
 
+
+  deconHelper(pointer);
+  
+
+
+}
+
+void BST::deconHelper(Node *pointer) {
+
+
+  if(pointer == NULL) {
+
+    return;
+  }
+
+  deconHelper(pointer->left);
+  deconHelper(pointer->right);
+
+  delete pointer; 
+
+
+}
 
 int BST::find(std::string& word) {
 
@@ -246,10 +269,16 @@ string BST::min() {
      return; 
    }
 
+   if(pointer->left != NULL) {
+     
    minHelper(pointer->left);
 
+   }
+   else {
+     
    cout << "The smallest Key is: " << pointer->key; 
-	  
+
+   }	  
  }
 
  string BST::max() {
@@ -267,13 +296,77 @@ string BST::min() {
      return; 
    }
 
+   if(pointer->right != NULL) {
 
-   maxHelper(pointer->right);
-
+        maxHelper(pointer->right);
+   }
+   else {
+     
    cout << "The largest key is: " << pointer->key; 
+
+   }
+
+ }
+
+
+ void BST::del(std::string& word) {
+
+
+
+
+
+
+
 
 
  }
 
 
- 
+ void BST::delHelper(std::string& word, Node *pointer) {
+
+
+   if(pointer == NULL) {
+
+     return; 
+     
+   }
+
+   if(word < pointer->data) {
+
+     delHelper(word, pointer->left); 
+
+   }
+   else if(word > pointer->data) {
+
+     delHelper(word, pointer->right); 
+
+   }
+
+   else {
+
+     Node *temp;
+
+     if(pointer->left == NULL) {
+
+       temp = pointer->right;
+       delete pointer;
+       pointer = temp;
+
+     }
+     else if(pointer->right == NULL) {
+
+       temp = pointer->left;
+       delete pointer;
+       pointer = temp; 
+     }
+
+
+   } else {
+
+     //code for handling both 
+
+
+
+   }
+
+ }
