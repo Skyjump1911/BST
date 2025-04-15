@@ -175,6 +175,17 @@ public:
 
 
 /**
+ * this is the helper function for the min funciton
+ *
+ * @param Node *pointer the pointer which we use as a starting point
+ * @pre You just need an initialized BST
+ * @return std::string the smallest key in the bST
+ * @post the BST is traversed, and the smallest key value is returned
+ * 
+ */
+  std::string minHelper(Node *pointer); 
+
+/**
  * this funciton returns the rarest word in the BST
  *
  * @pre a populated BST
@@ -185,6 +196,18 @@ public:
   std::string max();
 
 
+/**
+ * This funciton is the helper function for the max function
+ *
+ * @param Node *pointer the pointer which serves as a starting point for the search 
+ * @pre You need an intialized BST
+ * @return std::string the smallest value in the BST
+ * @post the list is traversed, and the smallest value in it is returned
+ * 
+ */
+
+  std::string maxHelper(Node *pointer);
+  
 /**
  * This function takes a file name and makes a new file which holds the contents of the BST (in order)
  *

@@ -230,6 +230,12 @@ void BST::read() {
 
 
 
+string BST::min() {
+
+    minHelper(pointer);
+	    
+ }
+
 	  
  string BST::minHelper(Node *pointer) {
  
@@ -238,16 +244,36 @@ void BST::read() {
 
      cout << "The tree is empty" << endl;
      return; 
-   } else {
+   }
 
-     if(pointer->left->key < temp->key) {
+   minHelper(pointer->left);
 
-       temp = pointer->left;
-       minHelper(temp); 
-
-     }
-	 
-
-
+   cout << "The smallest Key is: " << pointer->key; 
 	  
  }
+
+ string BST::max() {
+
+
+   maxHelper(pointer); 
+
+ }
+
+ string BST::maxHelper(Node *pointer) {
+
+
+   if(pointer == NULL) {
+
+     return; 
+   }
+
+
+   maxHelper(pointer->right);
+
+   cout << "The largest key is: " << pointer->key; 
+
+
+ }
+
+
+ 
