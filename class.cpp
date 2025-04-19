@@ -223,6 +223,9 @@ void BST::read() {
 
 
 
+	/**I got some help on the print/printhelper function from Justin and the youtube channel PaulProgramming
+	
+	 **/
 	void BST::print() {
 
 	  printHelper(pointer); 
