@@ -28,10 +28,9 @@ class Node {
   // Only the constructor is public here
 public:
 
-  Node(std::string word); 
+  Node(std::string word, int wordcount); 
 
   //Member variable declaration. 
-private:
                                                                          
   Node *left, *right;                                                          
   std::string key;                                                             
@@ -72,7 +71,7 @@ public:
   BST();
 
   //destructor
-  //  ~BST();
+  ~BST();
 
 
 
@@ -239,7 +238,19 @@ public:
  * @post the menu is printed out for the user to see
  * 
  */
-  void display(); 
+  void display();
+
+
+/**
+ * The helper function for our deconstructor
+ *
+ * @param Node *pointer a pointer the the node in question
+ * @pre You need a populated BST
+ * @return void No return type, this function only exixts to help us with the deconstructor
+ * @post the node is destroyed
+ * 
+ */
+  void deconHelper(Node *pointer); 
 
  };
 

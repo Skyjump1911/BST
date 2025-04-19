@@ -9,10 +9,11 @@ using namespace std;
 
 //constructor
 
+
 Node::Node(std::string word, int wordcount){
 
-  Node *left = NULL:
-  Node *right = NULL:
+  Node *left = nullptr;
+    Node *right = nullptr;
   int data = wordcount;   
   key = word; 
 
@@ -37,16 +38,16 @@ void BST::display() {
 
 
 //BST's construct
-void BST::BST() {
+     BST::BST() {
 
    
-    pointer = NULL:
+       pointer = NULL;
 
       
 
   }
 
-void BST::~BST() {
+    BST::~BST() {
 
 
   deconHelper(pointer);
@@ -230,7 +231,7 @@ void BST::read() {
 
 
 
-	//add comment about getting chatgpt help on knowing how to open up two files
+	//I got some help from chatgpt on remembering how to open up side panels so that I can have the .h file and the .cpp file open at the same time
 	
 
 	  void BST::printHelper(Node *pointer) {

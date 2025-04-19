@@ -9,7 +9,7 @@ using namespace std;
 int main () {
 
 
-  tree test;
+  BST test;
 
   test.display(); 
 
