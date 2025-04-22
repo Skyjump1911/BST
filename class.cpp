@@ -78,7 +78,7 @@ int BST::find(std::string& word) {
 
     cout << "This tree is empty. Why don't you put some fruit on it?" << endl;
     
-    return;
+    return -1;
   }
   else{
 
@@ -91,9 +91,9 @@ int BST::find(std::string& word) {
 int BST::findHelper(Node *pointer, std::string& word) {
 
 
-  if(pointer = NULL) {
+  if(pointer == NULL) {
 
-    return;
+    return -1;
   }
   
   if(word == pointer->key){
@@ -125,7 +125,7 @@ void BST::read() {
   cin >> filename;
 
 
-  ifsteam file; 
+  ifstream file; 
   file.open(filename);
 
   if (!file) {
@@ -141,7 +141,7 @@ void BST::read() {
 
   for(int i = 0; i < word.length(); i++) {
 
-    if(ispunct(word[i]) {
+    if(ispunct(word[i])) {
 	word.erase(i--,1);
       }
 
@@ -149,13 +149,13 @@ void BST::read() {
   
   while(file) {
 
-    set(word; 0); 
+    set(word, 0); 
 
     file >> word;
     
   for(int i = 0; i < word.length(); i++) {
 
-    if(ispunct(word[i]) {
+    if(ispunct(word[i])) {
 	word.erase(i--,1);
       }
   }
@@ -163,20 +163,25 @@ void BST::read() {
 
   }
   
-
+  }
 
   void BST::set(std::string& word, int wordcout) {
 
+    
 
+    int var = wordcount;
+
+    int test = wordcount + 1; 
+    
     if(pointer == NULL) {
 
 
-      pointer = new Node(word, wordcount++);
+      pointer = new Node(word, test);
       
     }
     else {
 
-      setHelper(pointer, word, wordcount); 
+      setHelper(pointer, word, var); 
 
     }
 
